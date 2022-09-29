@@ -16,6 +16,7 @@ function Form() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    
     if (firstName.length > 0) {
       const formData = { firstName: firstName, lastName: lastName };
       const dataArray = [...submittedData, formData];
@@ -41,8 +42,9 @@ function Form() {
       <form onsubmit={handleSubmit} >
         <input type="text" onChange={handleFirstNameChange} value={firstName} />
         <input type="text" onChange={handleLastNameChange} value={lastName} />
-        <button type="submit">Submit</button>
+        <button type="submit" >Submit</button>
       </form>
+
       {errors.length > 0
         ? errors.map((error, index) => (
           <p key={index} style={{ color: "red" }}>
